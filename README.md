@@ -80,14 +80,15 @@ The app uses JSON configuration files to store medication data by country. Each 
 ## 🚀 Download and Run
 
 End users do not need to open Python, Git, or a terminal. Download the file for your
-computer from the repository's **Releases** page:
+computer from the repository's [Releases page](https://github.com/biomedical-signal-processing/LEDD-WebApp/releases/latest):
 
-- **Windows:** download `LEDD-Calculator-Windows-x64-Setup.exe`, run it, and
+- **Windows:** download [LEDD-Calculator-Windows-x64-Setup.exe](https://github.com/biomedical-signal-processing/LEDD-WebApp/releases/latest/download/LEDD-Calculator-Windows-x64-Setup.exe), run it, and
   launch **LEDD Calculator** from the Start menu or desktop shortcut.
 - **Windows portable fallback:** if the installer is blocked by organization
-  policy, download `LEDD-Calculator-Windows-x64-Portable.zip`, choose
+  policy, download [LEDD-Calculator-Windows-x64-Portable.zip](https://github.com/biomedical-signal-processing/LEDD-WebApp/releases/latest/download/LEDD-Calculator-Windows-x64-Portable.zip), choose
   **Extract All**, open the extracted `LEDD Calculator` folder, and double-click
   `LEDD Calculator.exe`.
+
 The current release provides Windows downloads. On macOS and Linux, use the
 developer setup below to run the Streamlit application from source. A macOS
 desktop release is planned for later.
