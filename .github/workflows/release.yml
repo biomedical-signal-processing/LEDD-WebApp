@@ -1,0 +1,72 @@
+name: Build desktop release
+
+# Tagged pushes build and publish a GitHub Release. Manual runs build downloadable
+# workflow artifacts without creating a Release.
+on:
+  push:
+    tags:
+      - "v*"
+  workflow_dispatch:
+
+permissions:
+  # The release job needs permission to attach compiled assets to a tag.
+  contents: write
+
+jobs:
+  # Validate calculation and UI behavior once before starting platform builds.
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+      - run: python -m pip install -r requirements.txt
+      - run: python -m unittest discover -s tests -v
+
+  # Produce both an installer and a portable archive from the same onedir build.
+  windows:
+    needs: test
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+      - run: python -m pip install -r requirements-build.txt
+      - run: python -m PyInstaller --noconfirm --clean LEDD_Calculator.spec
+      - shell: pwsh
+        run: |
+          # GitHub's image normally includes Inno Setup; install it if absent.
+          $iscc = "${env:ProgramFiles(x86)}\Inno Setup 6\ISCC.exe"
+          if (-not (Test-Path -LiteralPath $iscc)) {
+            choco install innosetup --yes --no-progress
+          }
+          # Strip the leading "v" before embedding the tag as app version metadata.
+          $refName = "${{ github.ref_name }}"
+          $version = if ($refName -match '^v(.+)$') { $Matches[1] } else { "0.0.0" }
+          & $iscc "/DMyAppVersion=$version" LEDD_Calculator.iss
+          Compress-Archive -LiteralPath "dist\LEDD Calculator" -DestinationPath "releases\LEDD-Calculator-Windows-x64-Portable.zip" -CompressionLevel Optimal
+      - uses: actions/upload-artifact@v4
+        with:
+          name: LEDD-Calculator-Windows-x64
+          path: |
+            releases/LEDD-Calculator-Windows-x64-Setup.exe
+            releases/LEDD-Calculator-Windows-x64-Portable.zip
+
+  # Only a tag-triggered run publishes assets; workflow_dispatch remains a dry run.
+  release:
+    if: startsWith(github.ref, 'refs/tags/')
+    needs: windows
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/download-artifact@v4
+        with:
+          path: artifacts
+          merge-multiple: true
+      - uses: softprops/action-gh-release@v2
+        with:
+          generate_release_notes: true
+          files: artifacts/*

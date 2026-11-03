@@ -1,0 +1,122 @@
+{
+  "Akineton 2 mg": {
+    "Bipéridène": 2
+  },
+  "Azilect 1 mg": {
+    "Rasagiline": 1
+  },
+  "CARBIDO/LEVODO Sandoz CR 25/100 mg": {
+    "Carbidopa": 25,
+    "Levodopa CR": 100
+  },
+  "CARBIDO/LEVODO Sandoz CR 50/200 mg": {
+    "Carbidopa": 50,
+    "Levodopa CR": 200
+  },
+  "Jumex 5 mg": {
+    "Selegiline oral": 5
+  },
+  "Madopar 125 mg": {
+    "Levodopa": 100,
+    "Benserazide": 25
+  },
+  "Madopar 250 mg": {
+    "Levodopa": 200,
+    "Benserazide": 50
+  },
+  "Madopar DR 250 mg": {
+    "Levodopa": 200,
+    "Benserazide": 50
+  },
+  "MADOPAR LIQ 125 mg": {
+    "Levodopa": 100,
+    "Benserazide": 25
+  },
+  "MADOPAR LIQ 62.5 mg": {
+    "Levodopa": 50,
+    "Benserazide": 12.5
+  },
+  "Neupro 1 mg": {
+    "Rotigotine": 2.25
+  },
+  "Neupro 2 mg": {
+    "Rotigotine": 4.5
+  },
+  "Neupro 3 mg": {
+    "Rotigotine": 6.75
+  },
+  "Neupro 4 mg": {
+    "Rotigotine": 9
+  },
+  "Neupro 6 mg": {
+    "Rotigotine": 13.5
+  },
+  "Neupro 8 mg": {
+    "Rotigotine": 18
+  },
+  "Ongentys 50 mg": {
+    "Opicapone": 50
+  },
+  "Pk-merz 100 mg": {
+    "Amantadine": 100
+  },
+  "Requip-Modutab 2 mg": {
+    "Ropinirole": 2
+  },
+  "Requip-Modutab 4 mg": {
+    "Ropinirole": 4
+  },
+  "Requip-Modutab 8 mg": {
+    "Ropinirole": 8
+  },
+  "Sifrol ER 0.75": {
+    "Pramipexole": 0.75
+  },
+  "Sifrol ER 1.5": {
+    "Pramipexole": 1.5
+  },
+  "Sinemet 25/100 mg": {
+    "Carbidopa": 25,
+    "Levodopa": 100
+  },
+  "Sinemet 25/250 mg": {
+    "Carbidopa": 25,
+    "Levodopa": 250
+  },
+  "Stalevo 100/25/200 mg": {
+    "Levodopa": 100,
+    "Carbidopa": 25,
+    "Entacapone": 200
+  },
+  "Stalevo 125/31.25/200 mg": {
+    "Levodopa": 125,
+    "Carbidopa": 31.25,
+    "Entacapone": 200
+  },
+  "Stalevo 150/37.5/200 mg": {
+    "Levodopa": 150,
+    "Carbidopa": 37.5,
+    "Entacapone": 200
+  },
+  "Stalevo 200/50/200 mg": {
+    "Levodopa": 150,
+    "Carbidopa": 37.5,
+    "Entacapone": 200
+  },
+  "Stalevo 50/12.5/200 mg": {
+    "Levodopa": 50,
+    "Carbidopa": 12.5,
+    "Entacapone": 200
+  },
+  "Stalevo 75/18.75/200 mg": {
+    "Levodopa": 50,
+    "Carbidopa": 18.75,
+    "Entacapone": 200
+  },
+  "Xadago 100 mg": {
+    "Safinamide": 100
+  },
+  "Xadago 50 mg": {
+    "Safinamide": 50
+  }
+}
